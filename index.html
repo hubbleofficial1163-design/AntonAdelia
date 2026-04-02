@@ -55,7 +55,25 @@
             <div class="invitation-text-light">
                 Наше навсегда начинается...
             </div>
-            <img class="calendar-img" src="ss.png" alt="Календарь">
+            <!-- Таймер обратного отсчета -->
+<div class="countdown-timer">
+    <div class="countdown-block">
+        <span class="countdown-number" id="days">00</span>
+        <span class="countdown-label">дней</span>
+    </div>
+    <div class="countdown-block">
+        <span class="countdown-number" id="hours">00</span>
+        <span class="countdown-label">часов</span>
+    </div>
+    <div class="countdown-block">
+        <span class="countdown-number" id="minutes">00</span>
+        <span class="countdown-label">минут</span>
+    </div>
+    <div class="countdown-block">
+        <span class="countdown-number" id="seconds">00</span>
+        <span class="countdown-label">секунд</span>
+    </div>
+</div>
         </div>
     </section>
 
@@ -160,9 +178,9 @@
         
         <h2 class="wishes-title">Пожелания</h2>
         <div class="wishes-text">
-            <p><span class="wishes-highlight highlight-pink">🎁 Самым главным подарком</span> для нас будет ваше хорошее настроение на нашей свадьбе. <span class="wishes-highlight highlight-green">А чтобы руки были свободны для крепких объятий</span>, будем рады легким подаркам в конвертах и вашему творческому подходу к поздравлению.</p>
+            <p><span class="wishes-highlight highlight-pink"> Самым главным подарком</span> для нас будет ваше хорошее настроение на нашей свадьбе. <span class="wishes-highlight highlight-green">А чтобы руки были свободны для крепких объятий</span>, будем рады легким подаркам в конвертах и вашему творческому подходу к поздравлению.</p>
             
-            <p><span class="wishes-highlight highlight-beige">🍷 Приятным комплиментом для нас, вместо цветов</span>, будет бутылка вашего любимого вина или другого напитка, <span class="wishes-highlight highlight-blue">которую мы откроем на ближайшем совместном празднике</span>.</p>
+            <p><span class="wishes-highlight highlight-beige"> Приятным комплиментом для нас, вместо цветов</span>, будет бутылка вашего любимого вина или другого напитка, <span class="wishes-highlight highlight-blue">которую мы откроем на ближайшем совместном празднике</span>.</p>
         </div>
     </div>
 </section>
@@ -215,12 +233,12 @@
                 <label class="form-label">Ваши предпочтения по напиткам</label>
                 <div class="drinks-options">
                     <label class="drink-checkbox">
-                        <input type="checkbox" name="drink" value="вино"> 
-                        <span>Вино</span>
+                        <input type="checkbox" name="drink" value="белое вино"> 
+                        <span>Белое вино</span>
                     </label>
                     <label class="drink-checkbox">
-                        <input type="checkbox" name="drink" value="шампанское"> 
-                        <span>Шампанское</span>
+                        <input type="checkbox" name="drink" value="красное вино"> 
+                        <span>Красное вино</span>
                     </label>
                     <label class="drink-checkbox">
                         <input type="checkbox" name="drink" value="крепкий алкоголь"> 
@@ -229,10 +247,6 @@
                     <label class="drink-checkbox">
                         <input type="checkbox" name="drink" value="безалкогольные"> 
                         <span>Безалкогольные</span>
-                    </label>
-                    <label class="drink-checkbox">
-                        <input type="checkbox" name="drink" value="соки/вода"> 
-                        <span>Соки/Вода</span>
                     </label>
                 </div>
             </div>
@@ -293,6 +307,35 @@
         playIcon.style.display = 'block';
         pauseIcon.style.display = 'none';
     });
+
+    // Таймер обратного отсчета до 3 июля 2026 года
+function updateCountdown() {
+    const weddingDate = new Date(2026, 6, 3, 0, 0, 0); // 3 июля 2026 (месяц 6 = июль)
+    const now = new Date();
+    const diff = weddingDate - now;
+    
+    if (diff <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+// Запускаем таймер
+updateCountdown();
+setInterval(updateCountdown, 1000);
 </script>   
 </body>
 </html>
