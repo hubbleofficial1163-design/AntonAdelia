@@ -2112,3 +2112,177 @@ body {
         font-size: 10px;
     }
 }
+
+/* Смена порядка для пункта 15:00 в программе дня */
+.program-item-reverse {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 65px;
+}
+
+.program-item-reverse .program-content {
+    order: 1;
+    text-align: right; /* Выравнивание текста вправо */
+}
+
+.program-item-reverse .program-icon {
+    order: 2;
+}
+
+.program-item-reverse .program-time {
+    order: 3;
+    text-align: right;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .program-item-reverse {
+        gap: 22px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-item-reverse {
+        gap: 18px;
+        margin-bottom: 40px;
+    }
+    
+}/* Жесткое позиционирование картинок - только слева или справа, никогда сверху */
+.program-desc-line {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important;
+    flex-wrap: nowrap !important;
+}
+
+.program-side-img {
+    width: 70px !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    display: block !important;
+}
+
+.program-description {
+    flex: 1 !important;
+}
+
+/* Для 14:00 - картинка слева */
+.program-item .program-desc-line {
+    flex-direction: row !important;
+}
+
+/* Для 15:00 - картинка справа */
+.program-item-reverse .program-desc-line {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+}
+
+/* УНИЧТОЖАЕМ любые медиа-запросы которые могли бы сломать расположение */
+@media (max-width: 10000px) {
+    .program-desc-line {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+    .program-side-img {
+        width: 55px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-desc-line {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+    }
+    .program-side-img {
+        width: 45px !important;
+    }
+}
+
+
+/* Увеличение фото str.jpg и str2.jpg */
+.program-side-img {
+    width: 120px !important;
+    max-width: 120px !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .program-side-img {
+        width: 90px !important;
+        max-width: 90px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-side-img {
+        width: 70px !important;
+        max-width: 70px !important;
+    }
+}
+
+/* Заставляем фото прижаться к краям на мобильных - ЖЕСТКО */
+@media (max-width: 600px) {
+    .program-item .program-desc-line {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        margin-left: -20px !important;
+    }
+    
+    .program-item-reverse .program-desc-line {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-end !important;
+        gap: 0 !important;
+        margin-right: -20px !important;
+    }
+    
+    .program-side-img {
+        width: 80px !important;
+    }
+    
+    .program-item .program-side-img {
+        margin-left: -10px !important;
+    }
+    
+    .program-item-reverse .program-side-img {
+        margin-right: -10px !important;
+    }
+}
+
+/* Увеличение фото str.jpg и str2.jpg - на всех экранах */
+.program-side-img {
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+}
+
+/* На планшетах чуть меньше */
+@media (max-width: 768px) {
+    .program-side-img {
+        width: 90px !important;
+        max-width: 140px !important;
+    }
+}
+
+/* На мобильных телефонах - большие, но вписываются в экран */
+@media (max-width: 550px) {
+    .program-side-img {
+        width: 80px !important;
+        max-width: 100px !important;
+    }
+}
+
+/* Пунктирный контур для секции пожеланий */
+.section-wishes .wishes-container {
+    border: 3px dashed #333333 !important;
+    border-radius: 24px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+}
+
