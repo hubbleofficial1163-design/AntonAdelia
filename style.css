@@ -1719,25 +1719,25 @@ body {
 
 .highlight-pink {
     background: linear-gradient(120deg, rgba(232, 160, 176, 0.25) 0%, rgba(232, 160, 176, 0.1) 100%);
-    color: #c47a8a;
+    color: #cf909e;
     border-left: 3px solid #e8a0b0;
 }
 
 .highlight-green {
     background: linear-gradient(120deg, rgba(163, 179, 130, 0.25) 0%, rgba(163, 179, 130, 0.1) 100%);
-    color: #6b7a4a;
+    color: #7f8c62;
     border-left: 3px solid #a3b382;
 }
 
 .highlight-beige {
     background: linear-gradient(120deg, rgba(238, 222, 189, 0.4) 0%, rgba(238, 222, 189, 0.15) 100%);
-    color: #a8883a;
+    color: #bc9e51;
     border-left: 3px solid #eedebd;
 }
 
 .highlight-blue {
     background: linear-gradient(120deg, rgba(168, 190, 203, 0.25) 0%, rgba(168, 190, 203, 0.1) 100%);
-    color: #5a7a8a;
+    color: #7c9cab;
     border-left: 3px solid #a8becb;
 }
 
@@ -2027,4 +2027,88 @@ body {
     font-family: 'Ustroke-Regular', 'Kontrabanda', 'Playpen Sans', cursive !important;
     font-size: 20px !important;
     font-weight: 1010 !important;
+}
+
+
+.hero .plus {
+    font-family: 'Ustroke-Regular', 'Kontrabanda', 'Playpen Sans', cursive !important;
+    font-weight: 100 !important;
+    color: #9bc48b !important;
+    font-size: 72px !important;
+    margin: 0 !important;  /* убирает все отступы */
+}
+
+/* Таймер обратного отсчета */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.countdown-block {
+    text-align: center;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+    padding: 20px 25px;
+    border-radius: 20px;
+    min-width: 100px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.countdown-number {
+    display: block;
+    font-family: 'Havana', 'Kontrabanda', 'Playpen Sans', cursive;
+    font-size: 48px;
+    font-weight: 700;
+    color: #9bc48b;
+    line-height: 1.2;
+}
+
+.countdown-label {
+    display: block;
+    font-family: 'Kontrabanda', 'Playpen Sans', cursive;
+    font-size: 16px;
+    color: #888;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .countdown-timer {
+        gap: 15px;
+    }
+    
+    .countdown-block {
+        padding: 15px 18px;
+        min-width: 70px;
+    }
+    
+    .countdown-number {
+        font-size: 32px;
+    }
+    
+    .countdown-label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-timer {
+        gap: 10px;
+    }
+    
+    .countdown-block {
+        padding: 12px 12px;
+        min-width: 60px;
+    }
+    
+    .countdown-number {
+        font-size: 24px;
+    }
+    
+    .countdown-label {
+        font-size: 10px;
+    }
 }
