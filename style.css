@@ -419,25 +419,37 @@ body {
 }
 
 .stroke-1 {
-    background: linear-gradient(135deg, #f9e0d4 0%, #f5cfc0 100%);
+    background: #CED8E1;
     --rotation: -8deg;
     border-radius: 70% 30% 60% 40% / 50% 60% 40% 50%;
 }
 
 .stroke-2 {
-    background: linear-gradient(135deg, #d4e0b6 0%, #c2d09c 100%);
+    background: #EEDEBD;
     --rotation: 5deg;
     border-radius: 40% 60% 45% 55% / 65% 40% 60% 35%;
 }
 
 .stroke-3 {
-    background: linear-gradient(135deg, #f9efc7 0%, #f5e6ac 100%);
+    background:  #FFE085;
     --rotation: -12deg;
     border-radius: 55% 45% 65% 35% / 40% 70% 30% 60%;
 }
 
 .stroke-4 {
-    background: linear-gradient(135deg, #c7e2f9 0%, #acbef5 100%);
+    background: #A3B382;
+    --rotation: -12deg;
+    border-radius: 55% 45% 65% 35% / 40% 70% 30% 60%;
+}
+
+.stroke-5 {
+    background: #E5A0A5;
+    --rotation: -12deg;
+    border-radius: 55% 45% 65% 35% / 40% 70% 30% 60%;
+}
+
+.stroke-6 {
+    background: #AEBECB;
     --rotation: -12deg;
     border-radius: 55% 45% 65% 35% / 40% 70% 30% 60%;
 }
@@ -1311,5 +1323,683 @@ body {
     
     .location-map iframe {
         height: 280px;
+    }
+}
+
+/* Добавление фонового изображения под каждый заголовок */
+.hero .text,
+.section-white .content,
+.section-program .program-container,
+.section-dresscode .dresscode-container,
+.section-wishes .wishes-container,
+.section-guest .guest-container,
+.section-location .location-container {
+    position: relative;
+}
+
+/* Общие стили для всех заголовков с фоновым изображением */
+/* .hero .title, */
+.invitation-heading,
+.program-title,
+.dresscode-title,
+.wishes-title,
+.guest-title,
+.location-title {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    background-image: url('title.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Для заголовка в hero секции */
+/* .hero .title {
+    background-size: contain;
+    background-position: center;
+    padding: 10px 30px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+} */
+
+/* Для заголовка в секции приглашения */
+.invitation-heading {
+    background-size: 100% 100% !important;
+    background-position: center;
+    padding: 15px 40px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Для заголовка программы дня */
+.program-title {
+    background-size: 100% 100% !important;
+    background-position: center;
+    padding: 10px 30px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Для заголовка дресс-кода */
+.dresscode-title {
+    background-size: 100% 100% !important;
+    background-position: center;
+    padding: 10px 30px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Для заголовка пожеланий */
+.wishes-title {
+    background-size: 100% 100% !important;
+    background-position: center;
+    padding: 10px 30px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Для заголовка анкеты */
+.guest-title {
+    background-size: 100% 100% !important;
+    background-position: center;
+    padding: 10px 30px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Для заголовка локации */
+.location-title {
+    background-size: 100% 100% !important;
+    background-position: center;
+    padding: 10px 30px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .hero .title,
+    .invitation-heading,
+    .program-title,
+    .dresscode-title,
+    .wishes-title,
+    .guest-title,
+    .location-title {
+        padding: 8px 25px;
+    }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .hero .title,
+    .invitation-heading,
+    .program-title,
+    .dresscode-title,
+    .wishes-title,
+    .guest-title,
+    .location-title {
+        padding: 6px 20px;
+    }
+}
+
+
+/* Стили для фото в стиле Полароид */
+/* Уменьшенная рамка Полароид */
+.photo {
+    text-align: center;
+    background: white;
+    padding: 10px 10px 15px 10px;  /* было 12px 12px 35px 12px */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: rotate(var(--rotate, 0deg));
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+.photo:first-child {
+    --rotate: -3deg;
+}
+
+.photo:last-child {
+    --rotate: 3deg;
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Имена внутри рамки Полароид */
+.photo .name {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Kontrabanda', 'Playpen Sans', cursive;
+    color: #555;
+    text-shadow: none;
+    letter-spacing: 1px;
+}
+
+/* Цвета имен */
+.photo .adelya {
+    color: #e8a0b0;
+}
+
+.photo .anton {
+    color: #8ab5d4;
+}
+
+/* Убираем старый стиль для .name */
+.name {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Kontrabanda', 'Playpen Sans', cursive;
+}
+
+
+.photos {
+    gap: 20px;
+}
+
+.photo:first-child {
+    transform: translateX(-30px) rotate(-5deg);
+    z-index: 2;
+}
+
+.photo:last-child {
+    transform: translateX(30px) rotate(5deg);
+    z-index: 1;
+}
+
+
+
+.program-subtitle {
+    font-family: 'Kontrabanda', 'Havana', 'Playpen Sans', cursive !important;
+}
+
+
+/* Декоративные SVG объекты */
+.wishes-container {
+    position: relative;
+    overflow: visible !important;
+}
+
+.wishes-svg {
+    position: absolute;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.svg-1 {
+    top: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.svg-2 {
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+.svg-3 {
+    top: 50%;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    animation: float 7s ease-in-out infinite;
+    transform: translateY(-50%);
+}
+
+.svg-4 {
+    bottom: 30%;
+    left: -35px;
+    width: 70px;
+    height: 70px;
+    animation: float 5s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes float-reverse {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(-5deg); }
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .wishes-svg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .svg-3, .svg-4 {
+        display: none;
+    }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .wishes-svg {
+        display: none;
+    }
+}
+
+/* Стили для фото локации в стиле Полароид */
+/* Стили для фото локации в стиле Полароид - с наклоном и наложением */
+.location-photos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 40px;
+    min-height: 320px;
+}
+
+.location-photo {
+    position: absolute;
+    text-align: center;
+    background: white;
+    padding: 10px 10px 15px 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    border-radius: 2px;
+    width: 250px;
+    z-index: 1;
+}
+
+.location-photo:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    z-index: 10;
+}
+
+.location-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.location-photo-caption {
+    font-family: 'Kontrabanda', 'Playpen Sans', cursive;
+    font-size: 16px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+/* Первое фото - наклон влево и смещение влево */
+.photo-1 {
+    transform: translateX(-40px) translateY(-15px) rotate(-8deg);
+    z-index: 2;
+}
+
+/* Второе фото - наклон вправо и смещение вправо, наезжает на первое */
+.photo-2 {
+    transform: translateX(40px) translateY(15px) rotate(6deg);
+    z-index: 1;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .location-photo {
+        width: 220px;
+        padding: 8px 8px 12px 8px;
+    }
+    
+    .photo-1 {
+        transform: translateX(-40px) translateY(-15px) rotate(-8deg);
+    }
+    
+    .photo-2 {
+        transform: translateX(40px) translateY(15px) rotate(6deg);
+    }
+    
+    .location-photo-caption {
+        font-size: 14px;
+    }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .location-photos {
+        min-height: 280px;
+    }
+    
+    .location-photo {
+        width: 200px;
+        padding: 6px 6px 10px 6px;
+    }
+    
+    .photo-1 {
+        transform: translateX(-40px) translateY(-85px) rotate(-8deg);
+    }
+    
+    .photo-2 {
+        transform: translateX(40px) translateY(85px) rotate(6deg);
+    }
+    
+    .location-photo-caption {
+        font-size: 12px;
+    }
+}
+
+/* Цветовое выделение текста в секции пожеланий */
+.wishes-highlight {
+    display: inline;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.highlight-pink {
+    background: linear-gradient(120deg, rgba(232, 160, 176, 0.25) 0%, rgba(232, 160, 176, 0.1) 100%);
+    color: #c47a8a;
+    border-left: 3px solid #e8a0b0;
+}
+
+.highlight-green {
+    background: linear-gradient(120deg, rgba(163, 179, 130, 0.25) 0%, rgba(163, 179, 130, 0.1) 100%);
+    color: #6b7a4a;
+    border-left: 3px solid #a3b382;
+}
+
+.highlight-beige {
+    background: linear-gradient(120deg, rgba(238, 222, 189, 0.4) 0%, rgba(238, 222, 189, 0.15) 100%);
+    color: #a8883a;
+    border-left: 3px solid #eedebd;
+}
+
+.highlight-blue {
+    background: linear-gradient(120deg, rgba(168, 190, 203, 0.25) 0%, rgba(168, 190, 203, 0.1) 100%);
+    color: #5a7a8a;
+    border-left: 3px solid #a8becb;
+}
+
+/* Анимации плавного появления при скролле */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Базовые стили для анимируемых элементов */
+.hero,
+.section-white,
+.section-location,
+.section-program,
+.section-dresscode,
+.section-wishes,
+.section-guest {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Активное состояние - когда элемент появляется */
+.hero.visible,
+.section-white.visible,
+.section-location.visible,
+.section-program.visible,
+.section-dresscode.visible,
+.section-wishes.visible,
+.section-guest.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Индивидуальные анимации для разных элементов */
+.hero.visible .photos {
+    animation: fadeLeft 0.6s ease-out forwards;
+}
+
+.hero.visible .text {
+    animation: fadeRight 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-white.visible .invitation-heading {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.section-white.visible .invitation-text-main {
+    animation: fadeUp 0.5s ease-out 0.15s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-white.visible .invitation-text-light {
+    animation: fadeUp 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-white.visible .calendar-img {
+    animation: scaleIn 0.6s ease-out 0.45s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-location.visible .location-title {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.section-location.visible .location-info {
+    animation: fadeUp 0.5s ease-out 0.15s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-location.visible .location-photos {
+    animation: scaleIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-location.visible .location-map {
+    animation: fadeUp 0.5s ease-out 0.5s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-program.visible .program-title {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.section-program.visible .program-item:nth-child(2) {
+    animation: fadeLeft 0.5s ease-out 0.15s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-program.visible .program-item:nth-child(3) {
+    animation: fadeLeft 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-program.visible .program-item:nth-child(4) {
+    animation: fadeLeft 0.5s ease-out 0.45s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-dresscode.visible .dresscode-title {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.section-dresscode.visible .dresscode-subtitle {
+    animation: fadeUp 0.5s ease-out 0.15s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-dresscode.visible .color-swatches {
+    animation: scaleIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-wishes.visible .wishes-title {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.section-wishes.visible .wishes-text {
+    animation: fadeUp 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-wishes.visible .wishes-svg {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.section-guest.visible .guest-title {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.section-guest.visible .guest-links {
+    animation: fadeUp 0.5s ease-out 0.15s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.section-guest.visible .guest-form {
+    animation: fadeUp 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* Аудио плеер для второй секции */
+.audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 60px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.play-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8a0b0 0%, #d48396 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(232, 160, 176, 0.4);
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(232, 160, 176, 0.5);
+}
+
+.play-btn svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.audio-title {
+    font-family: 'Kontrabanda', 'Playpen Sans', cursive;
+    font-size: 16px;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+    .audio-player {
+        padding: 8px 15px;
+        gap: 10px;
+    }
+    
+    .play-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .play-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .audio-title {
+        font-size: 14px;
     }
 }
