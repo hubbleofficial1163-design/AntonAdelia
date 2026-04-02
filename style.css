@@ -2003,3 +2003,28 @@ body {
         font-size: 14px;
     }
 }
+
+
+/* Подключение шрифта Ustroke-Regular */
+@font-face {
+    font-family: 'Ustroke-Regular';
+    src: url('Ustroke-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Применение шрифта Ustroke-Regular к тексту "МЫ ЖЕНИМСЯ !" и "03.07.2026" */
+.hero .title,
+.hero .date {
+    font-family: 'Ustroke-Regular', 'Kontrabanda', 'Playpen Sans', cursive !important;
+    font-size: 40px !important;
+    font-weight: 100 !important;
+}
+
+/* Применение шрифта Ustroke-Regular к именам */
+.hero .name {
+    font-family: 'Ustroke-Regular', 'Kontrabanda', 'Playpen Sans', cursive !important;
+    font-size: 20px !important;
+    font-weight: 1010 !important;
+}
